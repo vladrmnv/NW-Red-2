@@ -2,6 +2,10 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "lerna": "^3.4.3"
+    "lerna": "^3.4.3",
+    "tslint-microsoft-contrib": "^5.2.1"
+  },
+  "dependencies": {
+    "tsconfig-paths": "^3.6.0"
   }
 }
