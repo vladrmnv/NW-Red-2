@@ -1,4 +1,0 @@
-class NwApiApplication {
-  constructor() {}
-  start() {}
-}
