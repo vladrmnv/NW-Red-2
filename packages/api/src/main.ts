@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { NwApiApplication } from './application';
+import { NwApiApplication } from 'application';
 
 export function main() {
   const app = new NwApiApplication();

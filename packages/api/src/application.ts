@@ -1,5 +1,5 @@
 import { InversifyExpressServer } from 'inversify-express-utils';
-import { NwApiRestServer } from './rest-server';
+import { NwApiRestServer } from 'rest-server';
 
 interface NwApiServers {
   rest: InversifyExpressServer | null;
