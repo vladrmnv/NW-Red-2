@@ -3,6 +3,7 @@
   "private": true,
   "devDependencies": {
     "lerna": "^3.4.3",
+    "ts-node-dev": "^1.0.0-pre.30",
     "tslint-microsoft-contrib": "^5.2.1"
   },
   "dependencies": {

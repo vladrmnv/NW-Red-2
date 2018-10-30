@@ -7,10 +7,20 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "API",
+      "name": "API:start",
       "sourceMaps": true,
       "protocol": "inspector",
       "program": "${workspaceRoot}/node_modules/ts-node/dist/bin.js",
+      "args": ["${workspaceRoot}/packages/api/src/index.ts", "--run"],
+      "cwd": "${workspaceRoot}/packages/api"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "API:watch",
+      "sourceMaps": true,
+      "protocol": "inspector",
+      "program": "${workspaceRoot}/node_modules/ts-node-dev/bin/ts-node-dev",
       "args": ["${workspaceRoot}/packages/api/src/index.ts", "--run"],
       "cwd": "${workspaceRoot}/packages/api"
     }
