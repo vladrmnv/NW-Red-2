@@ -1,15 +1,5 @@
-import { injectable } from 'inversify';
-
-@injectable()
-export abstract class CrudRepository {
-  constructor() {}
-  public findAll() {
-    throw new Error('Not implemented');
-  }
-  public findById() {
-    throw new Error('Not implemented');
-  }
-  public create<Model>(user: Model): Model {
-    return user;
-  }
+export interface Repository<T> {
+  create<T>(item: T): T;
+  find(): Array<T>;
+  findById(): T;
 }

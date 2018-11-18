@@ -1,8 +1,8 @@
 import 'reflect-metadata';
 import { NwApiApplication } from 'application';
 
-export function main() {
+export async function main() {
   const app = new NwApiApplication();
-  app.start();
+  await app.start();
   return app;
 }

@@ -6,6 +6,7 @@ import { main } from './main';
 if (process.argv.includes('--run')) {
   const start = Date.now();
   logger.await('Starting app');
-  main();
-  logger.success(`App started in ${Date.now() - start} ms.`);
+  main().then(() => {
+    logger.success(`App started in ${Date.now() - start} ms.`);
+  });
 }

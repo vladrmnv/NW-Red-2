@@ -1,5 +1,5 @@
 import { controller, httpGet } from 'inversify-express-utils';
-import { UserRepository } from 'repositories/user.repository';
+import { UserRepository } from 'repositories/User.repository';
 import { inject } from 'inversify';
 
 @controller('/users')
@@ -11,6 +11,6 @@ export class UsersController {
   }
   @httpGet('/')
   public async get() {
-    return this.userRepository.findAll();
+    return this.userRepository.find();
   }
 }
