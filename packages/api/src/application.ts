@@ -1,6 +1,5 @@
 import { InversifyExpressServer } from 'inversify-express-utils';
 import { NwApiRestServer } from 'rest-server';
-import 'di/container';
 
 interface NwApiServers {
   rest: InversifyExpressServer | null;
@@ -14,11 +13,8 @@ export class NwApiApplication {
     };
   }
   public start() {
-    this.initDi();
     this.initServers();
   }
-
-  private initDi() {}
 
   private initServers() {
     const restServer = new NwApiRestServer();

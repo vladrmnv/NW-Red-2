@@ -3,7 +3,9 @@
   "extends": ["tslint-microsoft-contrib"],
   "jsRules": {},
   "rules": {
-    "quotemark": [true, "single", "avoid-template"]
+    "quotemark": [true, "single", "avoid-template"],
+    "newline-per-chained-call": true,
+    "indent": [true, "spaces", 2]
   },
   "rulesDirectory": []
 }

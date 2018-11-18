@@ -20,9 +20,14 @@
       "name": "API:watch",
       "sourceMaps": true,
       "protocol": "inspector",
-      "program": "${workspaceRoot}/node_modules/ts-node-dev/bin/ts-node-dev",
-      "args": ["${workspaceRoot}/packages/api/src/index.ts", "--run"],
-      "cwd": "${workspaceRoot}/packages/api"
+      "program": "${workspaceRoot}/node_modules/.bin/ts-node-dev",
+      "args": [
+        "--project",
+        "${workspaceRoot}/packages/api/tsconfig.json",
+        "${workspaceRoot}/packages/api/src/index.ts",
+        "--run"
+      ]
+      // "cwd": "${workspaceRoot}/packages/api"
     }
   ]
 }
