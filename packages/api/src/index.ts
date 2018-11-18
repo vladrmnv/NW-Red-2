@@ -7,5 +7,5 @@ if (process.argv.includes('--run')) {
   const start = Date.now();
   logger.await('Starting app');
   main();
-  logger.complete(`App started in ${Date.now() - start} ms.`);
+  logger.success(`App started in ${Date.now() - start} ms.`);
 }
