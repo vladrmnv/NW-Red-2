@@ -1,22 +1,25 @@
-import { Repository } from './Repository';
-import { User } from 'models/User.model';
-import { injectable } from 'inversify';
+import { GenericRepository } from './GenericRepository';
+import { IUser } from 'models/User.model';
+import { injectable, inject } from 'inversify';
+import { Repository, Connection } from 'typeorm';
+import { MEMORY_DB } from 'data-sources/memory';
+import { UserEntity } from 'models/User.entity';
 
 @injectable()
-export class UserRepository implements Repository<User> {
-  find(): User[] {
-    return [
-      new User({
-        email: 'test@mail.com',
-        password: '123',
-      }),
-    ];
+export class UserRepository implements GenericRepository<IUser> {
+  private typeOrmRepository: Repository<IUser>;
+
+  constructor(@inject(MEMORY_DB) connection: Connection) {
+    this.typeOrmRepository = connection.getRepository(UserEntity);
   }
-  findById(): User {
+  find(): Promise<IUser[]> {
+    return this.typeOrmRepository.find();
+  }
+  findById(): Promise<IUser> {
     throw new Error('Method not implemented.');
   }
 
-  create<User>(user: User) {
-    return user;
+  create<IUser>(user: IUser) {
+    return this.typeOrmRepository.save(user);
   }
 }

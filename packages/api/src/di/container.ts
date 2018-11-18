@@ -1,5 +1,7 @@
 import { Container } from 'inversify';
 import { UserRepository } from 'repositories/User.repository';
 
-export const diContainer = new Container();
-diContainer.bind<UserRepository>(UserRepository).to(UserRepository);
+export function bindDependencies(container: Container) {
+  container.bind<UserRepository>(UserRepository).to(UserRepository);
+  return container;
+}

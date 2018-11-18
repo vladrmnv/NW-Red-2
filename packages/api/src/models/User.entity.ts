@@ -7,7 +7,7 @@ export const UserEntity = new EntitySchema<IUser>({
     id: {
       type: String,
       primary: true,
-      generated: true,
+      generated: 'uuid',
     },
     email: {
       type: String,
