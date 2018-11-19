@@ -1,6 +1,10 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "setup": "npm i; lerna bootstrap;",
+    "start": "cd packages/api; npm start"
+  },
   "devDependencies": {
     "lerna": "^3.4.3",
     "ts-node-dev": "^1.0.0-pre.30",
