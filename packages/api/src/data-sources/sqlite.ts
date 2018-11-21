@@ -1,7 +1,9 @@
 import { createConnection } from 'typeorm';
 import { UserEntity } from 'models/User.entity';
 
-export class MemoryDatasource {
+export const SQLITE: symbol = Symbol('SQLITE');
+
+export class SqliteDatasource {
   public createConnection() {
     return createConnection({
       type: 'sqlite',
@@ -11,5 +13,3 @@ export class MemoryDatasource {
     });
   }
 }
-
-export const MEMORY_DB: symbol = Symbol('MEMORY_DB');

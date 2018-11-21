@@ -1,6 +1,6 @@
 import { InversifyExpressServer } from 'inversify-express-utils';
 import { NwApiRestServer } from 'rest-server';
-import { MemoryDatasource, MEMORY_DB } from 'data-sources/memory';
+import { SqliteDatasource, SQLITE } from 'data-sources/sqlite';
 import { Connection } from 'typeorm';
 import { bindDependencies } from 'di/container';
 import { Container } from 'inversify';
@@ -33,9 +33,9 @@ export class NwApiApplication {
   }
 
   private async initDataSources() {
-    const memoryDb = new MemoryDatasource();
+    const memoryDb = new SqliteDatasource();
     this.dbs.memory = await memoryDb.createConnection();
-    this.diContainer.bind(MEMORY_DB).toConstantValue(this.dbs.memory);
+    this.diContainer.bind(SQLITE).toConstantValue(this.dbs.memory);
   }
   private initServers() {
     const restServer = new NwApiRestServer();
